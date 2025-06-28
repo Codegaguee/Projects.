@@ -315,6 +315,11 @@ int main() {
         payable = totalbill - Dbill;
     }
 
+    else if (totalbill < 1000) {
+
+        payable = totalbill;
+    }
+
     else {
 
         printf("No discount is applied.\n");
