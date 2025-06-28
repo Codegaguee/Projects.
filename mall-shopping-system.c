@@ -1,8 +1,15 @@
 #include <stdio.h>
 
+int bill(int, int);
+
+int bill(int x, int y) {
+
+    return x*y;
+}
+
 int main() {
 
-    int choice, choice2, items, quantity, bill = 0, Dbill = 0, payable = 0, totalbill = 0;
+    int choice, choice2, items, quantity, ibill = 0, iDbill = 0, payable = 0, totalbill = 0;
     int a1 = 350, a2 = 1200, a3 = 1500, a4 = 500, a5 = 2000;
     int b1 = 18000, b2 = 55000, b3 = 2500, b4 = 3000, b5 = 21000;
     int c1 = 1500, c2 = 800, c3 = 1600, c4 = 550, c5 = 950;
@@ -75,33 +82,32 @@ int main() {
 
             case 1:
 
-            bill = a1 * quantity;
+            ibill = bill(a1, quantity);
             break;
 
             case 2:
 
-            bill = a2 * quantity;
+            ibill = bill(a2, quantity);
             break;
 
             case 3:
 
-            bill = a3 * quantity;
+            ibill = bill(a3, quantity);
             break;
 
             case 4:
 
-            bill = a4 * quantity;
+            ibill = bill(a4, quantity);
             break;
 
             case 5:
 
-            bill = a5 * quantity;
+            ibill = bill(a5, quantity);
             break;
 
         } 
         
-        totalbill += bill;
-
+        totalbill += ibill;
     }
 
     switch (choice) {
@@ -140,31 +146,31 @@ int main() {
 
             case 1:
 
-            bill = b1 * quantity;
+            ibill = bill(b1, quantity);
             break;
 
             case 2:
 
-            bill = b2 * quantity;
+            ibill = bill(b2, quantity);
             break;
 
             case 3:
 
-            bill = b3 * quantity;
+            ibill = bill(b3, quantity);
             break;
 
             case 4:
 
-            bill = b4 * quantity;
+            ibill = bill(b4, quantity);
             break;
 
             case 5:
 
-            bill = b5 * quantity;
+            ibill = bill(b5, quantity);
             break;
         }
 
-        totalbill += bill;
+        totalbill += ibill;
 
     }
 
@@ -204,31 +210,31 @@ int main() {
 
             case 1:
 
-            bill = c1 * quantity;
+            ibill = bill(c1, quantity);
             break;
 
             case 2:
 
-            bill = c2* quantity;
+            ibill = bill(c2, quantity);
             break;
 
             case 3:
 
-            bill = c3 * quantity;
+            ibill = bill(c3, quantity);
             break;
 
             case 4:
 
-            bill = c4 * quantity;
+            ibill = bill(c4, quantity);
             break;
 
             case 5:
 
-            bill = c5 * quantity;
+            ibill = bill(c5, quantity);
             break;
         }
 
-        totalbill += bill;
+        totalbill += ibill;
 
     }
 
@@ -268,51 +274,52 @@ int main() {
 
             case 1:
 
-            bill = d1 * quantity;
+            ibill = bill(d1, quantity);
             break;
 
             case 2:
 
-            bill = d2* quantity;
+            ibill = bill(d2, quantity);
             break;
 
             case 3:
 
-            bill = d3 * quantity;
+            ibill = bill(d3, quantity);
             break;
 
             case 4:
 
-            bill = d4 * quantity;
+            ibill = bill(d4, quantity);
             break;
 
             case 5:
 
-            bill = d5 * quantity;
+            ibill = bill(d5, quantity);
             break;
         }
 
-        totalbill += bill;
+        totalbill += ibill;
+
     }
     
     } while (choice != 5);
 
     if (totalbill >= 2000) {
 
-        Dbill = totalbill * 0.20;
-        payable = totalbill - Dbill;
+        iDbill = totalbill * 0.20;
+        payable = totalbill - iDbill;
     }
 
     else if (totalbill >= 1500) {
 
-        Dbill = totalbill * 0.10;
-        payable = totalbill - Dbill;
+        iDbill = totalbill * 0.10;
+        payable = totalbill - iDbill;
     }
 
     else if (totalbill >= 1000) {
 
-        Dbill = totalbill * 0.05;
-        payable = totalbill - Dbill;
+        iDbill = totalbill * 0.05;
+        payable = totalbill - iDbill;
     }
 
     else if (totalbill < 1000) {
@@ -326,11 +333,11 @@ int main() {
     }
 
     printf("   =========== Cash Memo ============\n");
-    printf("||    Total bill : %d - BDT          ||\n", totalbill);
-    printf("||    Applied discount : %d - BDT     ||\n", Dbill);
-    printf("||    Total payable : %d - BDT       ||\n", payable);
-    printf("||  Thank you for shopping with us :D  ||\n");
-    printf("======================================\n");
+    printf("||    Total bill : %d - BDT             ||\n", totalbill);
+    printf("||    Applied discount : %d - BDT       ||\n", iDbill);
+    printf("||    Total payable : %d - BDT          ||\n", payable);
+    printf("||  Thank you for shopping with us :D   ||\n");
+    printf("==========================================\n");
 
     printf("       Thanks for visiting us :D.\n       ");
 
